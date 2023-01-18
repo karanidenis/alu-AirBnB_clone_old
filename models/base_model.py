@@ -4,6 +4,7 @@
 from uuid import uuid4
 import datetime
 
+
 class BaseModel:
     """ base class for all classes"""
     def __init__(self, *args, **kwargs):
@@ -14,3 +15,4 @@ class BaseModel:
     def __str__(self):
         """readable representation"""
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
+        
