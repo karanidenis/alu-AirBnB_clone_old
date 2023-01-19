@@ -1,5 +1,5 @@
 # #!/usr/bin/python3
-# """ Holberton AirBnB Console """
+# """ AirBnB Console """
 # import pytest
 # import cmd
 # import sys
