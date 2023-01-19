@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/usr/bin/python3
 """ Holberton AirBnB Console """
 # a program called console.py that contains the entry point of the command interpreter
