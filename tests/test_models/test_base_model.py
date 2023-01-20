@@ -44,7 +44,7 @@ class TestBaseModel(unittest.TestCase):
     def test_created_at_obj_created(self):
         self.assertIsNotNone(self.b1.created_at)
 
-    def test_updated_at_not_same(self):
+    def test_updated_at_not_None(self):
         self.assertIsNone(self.b1.save())
 
 
