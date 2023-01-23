@@ -35,6 +35,7 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """new instance"""
+        from models import storage
         if kwargs.__len__() > 0:
             for k, v in kwargs.items():
                if k == 'created_at' or k == 'updated_at':
@@ -47,6 +48,7 @@ class BaseModel:
             self.id = str(uuid4())
             self.created_at= datetime.now()
             self.updated_at = datetime.now()
+            storage.new(self)
 
     def __str__(self):
         """readable representation"""
@@ -54,7 +56,9 @@ class BaseModel:
 
     def save(self):
         """updates the value of updated_at when instance changes"""
+        from models import storage
         self.updated_at= datetime.now()
+        storage.save()
     
     def to_dict(self):
         """ print a dictionary with instances as keys"""
