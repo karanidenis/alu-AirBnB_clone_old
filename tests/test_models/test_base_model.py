@@ -22,6 +22,11 @@ class TestBaseModel(unittest.TestCase):
         checks if the to_dict method converts the basemodel to dictionary
         """
         self.assertEqual(type(self.b1_to_dict), dict)
+    
+    def test_to_dict(self):
+        """testing to dict method"""
+        self.assertIsInstance(self.b1_to_dict['updated_at'], str)
+
     def test_id_when_obj_created(self):
         """
         checks if an id is created when basemodel object is instantiated
