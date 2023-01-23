@@ -14,6 +14,7 @@ class TestBaseModel(unittest.TestCase):
 
     def setUp(self) -> None:
         self.b1 = BaseModel()
+        self.b3 = BaseModel()
         self.b1_to_dict  = self.b1.to_dict()
         self.b2 = BaseModel(**self.b1_to_dict)
 
@@ -49,8 +50,10 @@ class TestBaseModel(unittest.TestCase):
     def test_created_at_obj_created(self):
         self.assertIsNotNone(self.b1.created_at)
 
-    def test_updated_at_not_None(self):
-        self.assertIsNone(self.b1.save())
+    def test_save(self):
+        self.b1.save()
+        self.b3.save()
+        self.assertNotEqual(self.b1.updated_at, self.b3.updated_at)
 
 
 if __name__ == '__main__':
